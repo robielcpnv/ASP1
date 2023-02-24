@@ -1,4 +1,4 @@
-class CreateLectureGrade < ActiveRecord::Migration[7.0]
+class CreateLectureGrades < ActiveRecord::Migration[7.0]
   def change
     create_table :lecture_grades do |t|
       t.references :lecture, null: false, foreign_key: true

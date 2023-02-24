@@ -1,4 +1,4 @@
-class CreateLecturePromotion < ActiveRecord::Migration[7.0]
+class CreateLecturePromotions < ActiveRecord::Migration[7.0]
   def change
     create_table :lecture_promotions do |t|
       t.references :lecture, null: false, foreign_key: true
