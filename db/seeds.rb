@@ -29,3 +29,22 @@ end
     type_person_id: TypePerson.find_by(slug: 'TEA').id
   )
 end
+
+# Seed semester table
+4.times do |i|
+  Semester.create(name: "Semester #{i+1}")
+end
+
+# Seed category table
+10.times do
+  Category.create(name: Faker::Educator.subject)
+end
+
+# Seed promotion table for the next 10 years
+15.times do |i|
+  Promotion.create(
+    name: "Promotion CPNV #{2013+i}",
+    start_date: Faker::Date.in_date_period(month: 8,year: 2013+i),
+    end_date: Faker::Date.in_date_period(month: 6, year: 2015+i)
+  )
+end
