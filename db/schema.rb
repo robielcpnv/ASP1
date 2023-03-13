@@ -19,8 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_234631) do
 
   create_table "grades", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.decimal "result", precision: 1, scale: 1, null: false
-    t.decimal "weight", precision: 3, scale: 2, null: false
+    t.decimal "result", precision: 10, null: false
+    t.decimal "weight", precision: 10, null: false
     t.date "date", null: false
     t.bigint "semester_id", null: false
     t.bigint "promotion_id", null: false
