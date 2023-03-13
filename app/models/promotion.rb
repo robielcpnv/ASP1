@@ -9,4 +9,10 @@ class Promotion < ApplicationRecord
   validates :name, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :teacher_id, presence: true
+
+  def teacher_name
+    Person.find(teacher_id).firstname + ' ' + Person.find(teacher_id).lastname
+  end
+
 end
