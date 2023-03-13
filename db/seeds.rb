@@ -69,5 +69,50 @@ person_ids.each do |person_id|
   PersonPromotion.create(promotion_id: promotion_id, person_id: person_id)
 end
 
+# Seed grade table
+student = TypePerson.find_by(slug: 'STU') # replace with your slug for type_person = 2
+person_ids = student.people.pluck(:id)
+promotion_ids = Promotion.pluck(:id)
+person_ids.each do |person_id|
+  promotion_id = promotion_ids.sample
+  Grade.create(
+    name: Faker::Educator.course_name,
+    result: Faker::Number.between(from: 1.0, to: 6.0),
+    weight: Faker::Number.decimal(l_digits: 2, r_digits: 2),
+    date: Faker::Date.backward(days: 30),
+    student_id: person_id,
+    teacher_id: Promotion.find(promotion_id).teacher_id,
+    promotion_id: promotion_id,
+    semester_id: Semester.all.sample.id,
+  )
+end
+
+# Seed lecture_grades table
+lecture_ids = Lecture.pluck(:id)
+grade_ids = Grade.pluck(:id)
+lecture_ids.each do |lecture_id|
+  grade_id = grade_ids.sample
+  LectureGrade.create(grade_id: grade_id, lecture_id: lecture_id)
+end
+
+# Seed lecture_promotions table
+teacher = TypePerson.find_by(slug: 'TEA') # replace with your slug for type_person = 2
+teacher_ids = teacher.people.pluck(:id)
+lecture_ids = Lecture.pluck(:id)
+promotion_ids = Promotion.pluck(:id)
+semester_ids = Semester.pluck(:id)
+lecture_ids.each do |lecture_id|
+  teacher_id = teacher_ids.sample
+  promotion_id = promotion_ids.sample
+  semester_id = semester_ids.sample
+  LecturePromotion.create(
+    lecture_id: lecture_id,
+    person_id: teacher_id,
+    promotion_id: promotion_id,
+    semester_id: semester_id
+  )
+end
+
+
 
 
