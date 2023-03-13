@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :promotions
   resources :type_people
   resources :semesters
