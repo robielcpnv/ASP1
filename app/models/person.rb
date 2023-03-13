@@ -9,4 +9,10 @@ class Person < ApplicationRecord
   validates :lastname, presence: true
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :phone, presence: true
+  validates :type_person_id, presence: true
+
+  def type_person
+    TypePerson.find(type_person_id).name
+  end
+
 end
