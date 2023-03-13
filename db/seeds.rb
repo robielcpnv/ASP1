@@ -45,6 +45,29 @@ end
   Promotion.create(
     name: "Promotion CPNV #{2013+i}",
     start_date: Faker::Date.in_date_period(month: 8,year: 2013+i),
-    end_date: Faker::Date.in_date_period(month: 6, year: 2015+i)
+    end_date: Faker::Date.in_date_period(month: 6, year: 2015+i),
+    teacher_id: Person.where(type_person_id: TypePerson.find_by(slug: 'TEA').id).sample.id
   )
 end
+
+# Seed lecture table
+10.times do
+  Lecture.create(
+    name: Faker::Educator.course_name,
+    description: Faker::Lorem.paragraph,
+    category_id: Category.all.sample.id
+  )
+end
+
+
+# Seed person_promotions table
+student = TypePerson.find_by(slug: 'STU') # replace with your slug for type_person = 2
+person_ids = student.people.pluck(:id)
+promotion_ids = Promotion.pluck(:id)
+person_ids.each do |person_id|
+  promotion_id = promotion_ids.sample
+  PersonPromotion.create(promotion_id: promotion_id, person_id: person_id)
+end
+
+
+
