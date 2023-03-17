@@ -1,14 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>People</h1>
-
-<div id="people">
-  <% @people.each do |person| %>
-    <%= render person %>
-    <p>
-      <%= link_to "Show this person", person %>
-    </p>
-  <% end %>
+<h1 class="font-bold text-4xl text-gray-600 text-center">People</h1>
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full text-left text-sm font-light">
+          <thead class="border-b font-medium dark:border-neutral-500">
+          <tr>
+            <th scope="col" class="px-6 py-4">Firstname</th>
+            <th scope="col" class="px-6 py-4">Lastname</th>
+            <th scope="col" class="px-6 py-4">Email</th>
+            <th scope="col" class="px-6 py-4">Phone</th>
+            <th scope="col" class="px-6 py-4">Type</th>
+          </tr>
+          </thead>
+          <tbody id="people">
+            <% @people.each do |person| %>
+              <%= render person %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to "New person", new_person_path %>
