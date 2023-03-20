@@ -17,13 +17,15 @@
           </tr>
           </thead>
           <tbody id="people">
-            <% @people.each do |person| %>
-              <%= render person %>
-            <% end %>
+          <% @people.each do |person| %>
+            <%= render person %>
+          <% end %>
           </tbody>
         </table>
+        <p>
+          <%= link_to "New Person", new_person_path, class: "bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded" %>
+        </p>
       </div>
     </div>
   </div>
 </div>
-
