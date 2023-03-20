@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Semesters</h1>
-
-<div id="semesters">
-  <% @semesters.each do |semester| %>
-    <%= render semester %>
-    <p>
-      <%= link_to "Show this semester", semester %>
-    </p>
-  <% end %>
+<h1 class="font-bold text-4xl text-gray-600 text-center">Categories</h1>
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full text-left text-sm font-light">
+          <thead class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+          <tr>
+            <th scope="col" class="px-6 py-4">Name</th>
+            <th scope="col" class="px-6 py-4">Edit</th>
+          </tr>
+          </thead>
+          <tbody id="semesters">
+          <% @semesters.each do |semester| %>
+            <%= render semester %>
+          <% end %>
+          </tbody>
+        </table>
+        <p>
+          <%= link_to "New semester", new_semester_path , class: "bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded" %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to "New semester", new_semester_path %>
+
