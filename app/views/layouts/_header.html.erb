@@ -101,8 +101,8 @@
       <!-- Icon -->
       <% if user_signed_in? %>
         <div class="relative" data-te-dropdown-ref>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete,
-                      class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, form: { class: "inline" },
+                        class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400 bg-transparent border-none"
           %>
         </div>
 
