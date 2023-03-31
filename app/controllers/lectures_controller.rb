@@ -58,13 +58,13 @@ class LecturesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lecture
-      @lecture = Lecture.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lecture
+    @lecture = Lecture.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def lecture_params
-      params.require(:lecture).permit(:name, :description)
-    end
+  # Only allow a list of trusted parameters through.
+  def lecture_params
+    params.require(:lecture).permit(:name, :description, :category_id)
+  end
 end
