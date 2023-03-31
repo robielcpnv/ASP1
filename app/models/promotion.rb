@@ -1,9 +1,9 @@
 class Promotion < ApplicationRecord
   belongs_to :teacher, class_name: 'Person'
-  has_many :grades
+  has_many :grades, dependent: :destroy
   has_many :lecture_promotions
   has_many :lectures, through: :lecture_promotions
-  has_many :person_promotions
+  has_many :person_promotions, dependent: :destroy
   has_many :people, through: :person_promotions
 
   validates :name, presence: true
