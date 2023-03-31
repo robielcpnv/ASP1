@@ -58,13 +58,13 @@ class PromotionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_promotion
-      @promotion = Promotion.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_promotion
+    @promotion = Promotion.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def promotion_params
-      params.require(:promotion).permit(:name, :start_date, :end_date)
-    end
+  # Only allow a list of trusted parameters through.
+  def promotion_params
+    params.require(:promotion).permit(:name, :start_date, :end_date, :teacher_id)
+  end
 end
