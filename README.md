@@ -4,6 +4,9 @@ This is a Ruby on Rails application that aims to create a grading system for stu
 The application uses a MySQL database and has multiple tables to store relevant data. 
 The authentication system is implemented using Devise.
 
+## Table of Contents
+ [MLC and MLD](https://github.com/robielcpnv/ASP1/tree/main/db)
+
 ## Features
 
 - People management (students, teachers, etc.)
