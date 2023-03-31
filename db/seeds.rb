@@ -30,6 +30,8 @@ end
   )
 end
 
+
+
 # Seed semester table
 4.times do |i|
   Semester.create(name: "Semester #{i+1}")
@@ -114,5 +116,14 @@ lecture_ids.each do |lecture_id|
 end
 
 
+emails = Person.pluck(:email)
 
+# Create new user records for each email address
+emails.each do |email|
+  User.create!(
+    email: email,
+    password: 'password',
+    password_confirmation: 'password'
+  )
+end
 
