@@ -1,0 +1,45 @@
+<%= form_with(model: type_person) do |form| %>
+
+
+  <div class="lg:w-1/2 md:w-2/3 mx-auto">
+    <div class="flex flex-wrap -m-2">
+      <% if type_person.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(type_person.errors.count, "error") %> prohibited this type_person from being saved:</h2>
+
+          <ul>
+            <% type_person.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :name, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :name, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :slug, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :slug, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :description, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :description, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+      <div class="p-2 w-full">
+        <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <%= form.submit %>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>

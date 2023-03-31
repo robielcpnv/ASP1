@@ -18,5 +18,7 @@ module ASP1ESGIFI
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.middleware.insert_after ActionDispatch::Flash, Rack::MethodOverride
+
   end
 end

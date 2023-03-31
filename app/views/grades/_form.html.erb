@@ -1,0 +1,78 @@
+<%= form_with(model: grade) do |form| %>
+
+  <div class="lg:w-1/2 md:w-2/3 mx-auto">
+    <div class="flex flex-wrap -m-2">
+      <% if grade.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+          <ul>
+            <% grade.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :name, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :name, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :result, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :result, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :weight, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :weight, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :date, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.date_field :date, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :semester_id, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :semester_id, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :promotion_id, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :promotion_id, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :student_id, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :student_id, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+      <div class="p-2 w-full">
+        <div class="relative">
+          <%= form.label :teacher_id, class: "leading-7 text-sm text-gray-600" %>
+          <%= form.text_field :teacher_id, class: "w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" %>
+        </div>
+      </div>
+
+      <div class="p-2 w-full">
+        <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <%= form.submit %>
+        </button>
+      </div>
+    </div>
+  </div>
+<% end %>
