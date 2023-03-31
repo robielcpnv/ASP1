@@ -29,66 +29,69 @@
       data-te-collapse-item>
       <a class="pr-2 text-xl font-semibold text-white" href="/">ASP1 ES GIFI</a>
       <!-- Left links -->
-      <ul
-        class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
-        data-te-navbar-nav-ref>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/grades"
-            data-te-nav-link-ref
-          >Grades</a
-          >
-        </li>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/lectures"
-            data-te-nav-link-ref
-          >Lectures</a
-          >
-        </li>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/people"
-            data-te-nav-link-ref
-          >People</a
-          >
-        </li>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/categories"
-            data-te-nav-link-ref
-          >Categories</a
-          >
-        </li>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/promotions"
-            data-te-nav-link-ref
-          >Promotions</a
-          >
-        </li>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/semesters"
-            data-te-nav-link-ref
-          >Semester</a
-          >
-        </li>
-        <li class="p-2" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="/type_people"
-            data-te-nav-link-ref
-          >Type</a
-          >
-        </li>
-      </ul>
+      <% if user_signed_in? %>
+        <ul
+          class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
+          data-te-navbar-nav-ref>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/grades"
+              data-te-nav-link-ref
+            >Grades</a
+            >
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/lectures"
+              data-te-nav-link-ref
+            >Lectures</a
+            >
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/people"
+              data-te-nav-link-ref
+            >People</a
+            >
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/categories"
+              data-te-nav-link-ref
+            >Categories</a
+            >
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/promotions"
+              data-te-nav-link-ref
+            >Promotions</a
+            >
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/semesters"
+              data-te-nav-link-ref
+            >Semester</a
+            >
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a
+              class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              href="/type_people"
+              data-te-nav-link-ref
+            >Type</a
+            >
+          </li>
+        </ul>
+        <% end %>
+
       <!-- Left links -->
     </div>
     <!-- Collapsible wrapper -->
@@ -96,27 +99,30 @@
     <!-- Right elements -->
     <div class="relative flex items-center">
       <!-- Icon -->
-      <div class="relative" data-te-dropdown-ref>
-        <%= link_to "Sign Up", new_user_registration_path,
-                    class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-        %>
-      </div>
-      <div class="relative" data-te-dropdown-ref>
-        <%= link_to "Sign In", new_user_session_path,
-                    class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-        %>
-      </div>
-      <div class="relative" data-te-dropdown-ref>
-        <%= link_to "Sign Out", destroy_user_session_path,method: :delete,
-                    class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-        %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="relative" data-te-dropdown-ref>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete,
+                      class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+          %>
+        </div>
 
-      <div class="relative" data-te-dropdown-ref>
-        <%= link_to "Edit Profile", edit_user_registration_path,
-                    class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-        %>
-      </div>
+        <div class="relative" data-te-dropdown-ref>
+          <%= link_to "Edit Profile", edit_user_registration_path,
+                      class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+          %>
+        </div>
+      <% else %>
+        <div class="relative" data-te-dropdown-ref>
+          <%= link_to "Sign Up", new_user_registration_path,
+                      class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+          %>
+        </div>
+        <div class="relative" data-te-dropdown-ref>
+          <%= link_to "Sign In", new_user_session_path,
+                      class: "p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+          %>
+        </div>
+      <% end %>
     </div>
     <!-- Right elements -->
   </div>
